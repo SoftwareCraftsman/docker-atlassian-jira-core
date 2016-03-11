@@ -19,7 +19,7 @@ eval `docker-machine env atlassian` <3>
 
 ```sh
 docker pull softwarecraftsmen/atlassian-jira-core
-docker run -d --name jira -p 8080:8080 atlassian-jira-core
+docker run -d --name jira -p 8080:8080 softwarecraftsmen/atlassian-jira-core
 ```
 
 Startup after creating a container takes some time as the installation and configuration process is continuing.
