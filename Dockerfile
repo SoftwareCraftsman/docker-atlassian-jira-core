@@ -1,10 +1,9 @@
-FROM ubuntu:14.04
+FROM buildpack-deps:trusty
 MAINTAINER Software Craftsmen GmbH & Co KG <office@software-craftsmen.at>
 
 ENV JIRA_VERSION=7.1.1-x64
 
-RUN apt-get upgrade -y && apt-get install -y wget && \
-    wget --no-verbose https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core-$JIRA_VERSION.bin -O atlassian-jira-core-$JIRA_VERSION.bin && \
+RUN wget --no-verbose https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core-$JIRA_VERSION.bin -O atlassian-jira-core-$JIRA_VERSION.bin && \
     chmod a+x atlassian-jira-core-$JIRA_VERSION.bin
 
 # Run the installer
